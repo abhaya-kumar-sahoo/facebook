@@ -9,7 +9,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({
     extended:true
 }));
-
+  
 // mongodb connection
 mongoose.connect('mongodb+srv://whatsapp:s4vQGKy4iyManggp@cluster0.ehbwq.mongodb.net/whatsapp?retryWrites=true&w=majority', {
   useNewUrlParser: true,
@@ -22,12 +22,11 @@ mongoose.connect('mongodb+srv://whatsapp:s4vQGKy4iyManggp@cluster0.ehbwq.mongodb
   }
 });
 ///user schema
-
+ 
 const userSchema={
     email:String,
     password:String
 }
-
 const User= new mongoose.model("User", userSchema)
 
 app.get("/", function(req, res){
